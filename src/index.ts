@@ -27,7 +27,7 @@ console.log('Ello, world!');
 const bot = new Telegraf(process.env.BOT_TOKEN!)
 
 bot.start((ctx) => {
-  ctx.reply('Ello, world!');
+  ctx.reply('Ello, there! Send me \'meow\'.');
 });
 
 bot.on(message('sticker'), (ctx) => ctx.reply('👍'))
@@ -36,6 +36,11 @@ bot.hears('meow', async (ctx) => {
     ctx.replyWithPhoto(cat.url);
 });
 bot.launch();
+
+bot.hears('Rick', async (ctx ) => {
+    const Rick = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.2dqcUObYQ3-xwZjHktoBoQHaEK%3Fpid%3DApi&f=1&ipt=112b45e841546b5b58fd04b97fdec5654be10fb7089ba93bf65c3c03816f7a62&ipo=images";
+    ctx.replyWithPhoto(Rick);
+});
 
 console.log('Bot is running...');
 
